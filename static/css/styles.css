@@ -1,0 +1,18 @@
+h1 {
+    background-color: orange;
+    color: white;
+}
+h2 {
+    background-color: orange;
+    color: white;
+}
+
+.pool-back {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("/static/pool.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 55%;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    border-color: #ffffff;
+}
