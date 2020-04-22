@@ -38,4 +38,6 @@ h2 {
 .full-page {
 	height: 100%;
 	width: 100%;
+	margin: 0;
+	padding: 100px;
 }
