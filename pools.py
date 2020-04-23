@@ -23,7 +23,7 @@ def greet():
 
 @app.route("/", methods = ["GET", "POST"])
 def add_pool():
-	if request.method == "post":
+	if request.method == "POST":
 		# acquire the input from form
 		pool_name = request.form["pool_name"]
 		status = request.form["status"]
