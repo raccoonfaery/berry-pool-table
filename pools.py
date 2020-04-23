@@ -21,26 +21,21 @@ def greet():
 	allpools.extend(added_pools)
 	return json.dumps(allpools)
 
-@app.route("/", methods = ["GET", "POST"])
+@app.route("/add_pool", methods = ["POST"])
 def add_pool():
-	if request.method == "POST":
-		# acquire the input from form
-		pool_name = request.form["pool_name"]
-		status = request.form["status"]
-		pool_type = request.form["pool_type"]
+	# acquire the input from form
+	pool_name = request.form["pool_name"]
+	status = request.form["status"]
+	pool_type = request.form["pool_type"]
 
-		pooly = {"Pool_name": pool_name, "Pool_type": pool_type, "Status": status}
-		added_pools.append(pooly)
-		return render_template("pool_added.html")
+	pooly = {"Pool_name": pool_name, "Pool_type": pool_type, "Status": status}
+	added_pools.append(pooly)
+	return render_template("pool_added.html")
 
-	return render_template("index.html")
-
-"""
 # welcome page
 @app.route("/", methods = ["GET"])
 def social_distancing():
 	return render_template("index.html")
-"""
 
 if __name__ == "__main__":
 	app.run()
