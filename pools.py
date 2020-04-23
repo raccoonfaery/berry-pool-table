@@ -35,7 +35,7 @@ def add_pool():
 """
 
 # welcome page
-@app.route("/", methods = ["GET"])
+@app.route("/")
 def social_distancing():
 	return render_template("index.html")
 
