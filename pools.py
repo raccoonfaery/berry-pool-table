@@ -14,7 +14,7 @@ app = Flask(__name__)
 def greet():
 	allpools = []
 	for pool in pool_info_root.findall("row"):
-		pooly = {"Pool_name": pool.find("pool_name").text, "Pool_type": pool.find("pool_type").text, "Status": pool.find("status").text, "Weekday_closure": pool.find("weekday_closure").text}
+		pooly = {"Pool_name": pool.find("pool_name").text, "Pool_type": pool.find("pool_type").text, "Status": pool.find("status").text}
 		allpools.append(pooly)
 	return json.dumps(allpools)
 
