@@ -9,6 +9,8 @@ pool_info_root = ET.fromstring(pool_info_data.text)
 
 app = Flask(__name__)
 
+added_pools = []
+
 # pools table page
 @app.route("/pools")
 def greet():
@@ -16,7 +18,20 @@ def greet():
 	for pool in pool_info_root.findall("row"):
 		pooly = {"Pool_name": pool.find("pool_name").text, "Pool_type": pool.find("pool_type").text, "Status": pool.find("status").text}
 		allpools.append(pooly)
+	allpools.extend(added_pools)
 	return json.dumps(allpools)
+
+@app.route("/", methods = ["POST"])
+def add_pool():
+	# acquire the input from form
+	pool_name = request.form["pool_name"]
+	status = request.form["status"]
+	pool_type = request.form["pool_type"]
+
+	pooly = {"Pool_name": pool_name, "Pool_type": pool_type, "Status": status}
+	added_pools.append(pooly)
+
+	return render_template("pool_added.html")
 
 # welcome page
 @app.route("/")
