@@ -23,16 +23,16 @@
 				<div class="card card-body">
 					<form action="add_pool" method="post" id="pools_form" onsubmit="return validateData()">
 						<label for="pool_name"><b>Pool Name</b></label>
-						<input type="text" name="pool_name" required>
+						<input type="text" class="form-control" name="pool_name" required>
 						<br>
 						<br>
 						<label for="status"><b>Status</b></label>
-						<input type="text" name="status" required>
+						<input type="text" class="form-control" name="status" required>
 						<br>
 						<br>
 						<label for="pool_type"><b>Pool Type</b></label>
-						<input type="text" name="pool_type" required>
-						<button type="submit">Add</button>
+						<input type="text" class="form-control" name="pool_type" required>
+						<button type="submit" class="btn btn-light">Add</button>
 					</form>
 					<div class="alert alert-warning alert-dismissible fade show" role="alert" id="error">
 					</div>
