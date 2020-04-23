@@ -12,7 +12,7 @@ app = Flask(__name__)
 added_pools = []
 
 # pools table page
-@app.route("/")
+@app.route("/pools")
 def greet():
 	allpools = []
 	for pool in pool_info_root.findall("row"):
