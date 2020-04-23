@@ -21,7 +21,7 @@ def greet():
 	allpools.extend(added_pools)
 	return json.dumps(allpools)
 
-@app.route("/add_pool", methods = ["GET", "POST"])
+@app.route("/")
 def add_pool():
 	# acquire the input from form
 	pool_name = request.form["pool_name"]
