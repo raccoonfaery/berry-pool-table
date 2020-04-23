@@ -11,15 +11,11 @@
 	<body>
 		<h1>Welcome to Austin Pool Information Website!</h1>
 		<div class="pillow">
-			<div class="card">
-				<div class="card-body">
-					<div class="pool-back">
-						<ul class="list-group list-group-flush">
-						<li class="list-group-item"><h2><a href="{{ url_for('static', filename='pools.html') }}">Show Pools</a></h2></li>
-						<li class="list-group-item"><h2><a href="{{ url_for('static', filename='pool_form.html') }}">Add Pools</a></h2></li>
-						</ul>
-					</div>
-				</div>
+			<div class="card pool-back">
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item"><h2><a href="{{ url_for('static', filename='pools.html') }}">Show Pools</a></h2></li>
+					<li class="list-group-item"><h2><a href="{{ url_for('static', filename='pool_form.html') }}">Add Pools</a></h2></li>
+				</ul>
 			</div>
 		</div>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
