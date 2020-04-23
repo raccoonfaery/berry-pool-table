@@ -54,9 +54,7 @@ function createHeaderRow() {
 	headerRow["Pool_name"] = "Pool_name";
 	headerRow["Pool_type"] = "Pool_type";
 	headerRow["Status"] = "Status";
-	headerRow["Open_date"] = "Open_date";
-	headerRow["Weekday"] = "Weekday";
-	headerRow["Weekend"] = "Weekend";
+	headerRow["Weekday_closure"] = "Weekday_closure";
 	createRow("thead");
 	fontWeight = "bold";
 	createColumn("thead", headerRow, fontWeight);
@@ -94,27 +92,11 @@ function createColumn(rowId, data, fontWeight) {
 	statusCol.appendChild(statusData);
 	document.getElementById(rowId).appendChild(statusCol);
 
-	// creates open_date column
-	var openCol = document.createElement("TD");
-	openCol.style.fontWeight = fontWeight;
-	openCol.class = "col px-md-5";
-	var openData = document.createTextNode(data.Open_date);
-	openCol.appendChild(openData);
-	document.getElementById(rowId).appendChild(openCol);
-
 	// creates weekday column
 	var wkdayCol = document.createElement("TD");
 	wkdayCol.style.fontWeight = fontWeight;
 	wkdayCol.class = "col px-md-5";
-	var wkdayData = document.createTextNode(data.Weekday);
+	var wkdayData = document.createTextNode(data.Weekday_closure);
 	wkdayCol.appendChild(wkdayData);
 	document.getElementById(rowId).appendChild(wkdayCol);
-
-	// creates weekend column
-	var wkendCol = document.createElement("TD");
-	wkendCol.style.fontWeight = fontWeight;
-	wkendCol.class = "col px-md-5";
-	var wkendData = document.createTextNode(data.Weekend);
-	wkendCol.appendChild(wkendData);
-	document.getElementById(rowId).appendChild(wkendCol);
 }
