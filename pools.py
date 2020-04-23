@@ -1,5 +1,5 @@
 import requests
-from flask import Flask, request, render_template
+from flask import Flask, render_template
 import json
 from xml.etree import ElementTree as ET
 
@@ -16,7 +16,6 @@ def greet():
 	for pool in pool_info_root.findall("row"):
 		pooly = {"Pool_name": pool.find("pool_name").text, "Pool_type": pool.find("pool_type").text, "Status": pool.find("status").text}
 		allpools.append(pooly)
-	allpools.extend(added_pools)
 	return json.dumps(allpools)
 
 # welcome page
