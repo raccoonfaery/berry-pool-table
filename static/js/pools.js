@@ -54,7 +54,6 @@ function createHeaderRow() {
 	headerRow["Pool_name"] = "Pool_name";
 	headerRow["Pool_type"] = "Pool_type";
 	headerRow["Status"] = "Status";
-	headerRow["Weekday_closure"] = "Weekday_closure";
 	createRow("thead");
 	fontWeight = "bold";
 	createColumn("thead", headerRow, fontWeight);
@@ -91,12 +90,4 @@ function createColumn(rowId, data, fontWeight) {
 	var statusData = document.createTextNode(data.Status);
 	statusCol.appendChild(statusData);
 	document.getElementById(rowId).appendChild(statusCol);
-
-	// creates weekday column
-	var wkdayCol = document.createElement("TD");
-	wkdayCol.style.fontWeight = fontWeight;
-	wkdayCol.class = "col px-md-5";
-	var wkdayData = document.createTextNode(data.Weekday_closure);
-	wkdayCol.appendChild(wkdayData);
-	document.getElementById(rowId).appendChild(wkdayCol);
 }
