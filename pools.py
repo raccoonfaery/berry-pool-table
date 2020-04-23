@@ -12,7 +12,7 @@ app = Flask(__name__)
 added_pools = []
 
 # pools table page
-@app.route("/", methods = ["GET"])
+@app.route("/")
 def greet():
 	allpools = []
 	for pool in pool_info_root.findall("row"):
@@ -34,7 +34,7 @@ def add_pool():
 	return render_template("pool_added.html")
 
 # welcome page
-@app.route("/")
+@app.route("/", methods = ["GET"])
 def social_distancing():
 	return render_template("index.html")
 
